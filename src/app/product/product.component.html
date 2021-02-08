@@ -1,0 +1,22 @@
+<div class="grid-container">
+    <div class="card"  *ngFor="let item of products" >
+        <img class="card-img" [src]="item.image" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">{{item.description | slice:0:50}}...</p>
+          <div class="row">
+            <div class="col-7">
+              <b>Price:</b> <span> {{item.price | currency}}</span>
+            </div>
+            <div class="col-5">
+              <b>Qty:</b> <span> {{item.quantity}}</span>
+            </div>
+        </div>
+        <br/>
+          <a (click)="addToCart($event,item)" *ngIf="!item.addedToCart; else Added" href="#" class="btn btn-primary btn-sm btn-block">Add To Cart</a>
+         <ng-template #Added>
+          <a  href="javascript:void(0)" class="btn btn-success btn-sm btn-block">Added</a>
+        </ng-template>
+        </div>
+</div>
+</div>

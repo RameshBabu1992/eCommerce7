@@ -1,0 +1,12 @@
+.modal-body {
+  min-height: 300px;
+}
+
+.modal {
+  top: 10%;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
